@@ -11,7 +11,7 @@ namespace AppTest
     {
         static void Main(string[] args)
         {                                
-
+            //Дима красавчек ваще
                 float CacheResult;
             Console.WriteLine("Введите пример для решения.");
             string Example = Console.ReadLine();
