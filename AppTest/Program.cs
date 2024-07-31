@@ -36,9 +36,8 @@ namespace AppTest
                 //    Console.WriteLine($"Элемент {i}: {sub}");
                 //}
 
-                for (i = -1; i <= Cache.Length - 1;)
-                {                   
-                    i = i + 2;
+                for (i = -1; i <= Cache.Length - 1;  i = i + 2)
+                {                                      
                     if (i >= Cache.Length)
                     {
                         DoPlusMinus = 1;
