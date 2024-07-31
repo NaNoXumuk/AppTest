@@ -21,11 +21,9 @@ namespace AppTest
             Console.WriteLine("Введите пример для решения.");
             string Example = Console.ReadLine();
 
-            for (i = 0; i < Example.Length; i++)
-            {
+            for (i = 0; i < Example.Length; i++)           
                 if (Example[i] == '/' || Example[i] == '*' || Example[i] == '+' || Example[i] == '-')
-                    CountMathIterations++;
-            }
+                    CountMathIterations++;            
 
             while (CountMathIterations > 0)
             {
@@ -80,11 +78,9 @@ namespace AppTest
                 CountMathIterations--;
                 Example = string.Empty;
 
-                for (i = 0; i < Cache.Length; i++)
-                {
+                for (i = 0; i < Cache.Length; i++)                
                     if (Cache[i] != null)
-                        Example = Example + Cache[i] + " ";
-                }
+                        Example = Example + Cache[i] + " ";               
 
                 //Console.WriteLine($"Новый пример: {Example}");
                 //Console.WriteLine();
