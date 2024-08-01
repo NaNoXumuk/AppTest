@@ -1,5 +1,4 @@
-﻿#define Calc
-//#define Test
+﻿
 
 using System;
 using System.Collections.Generic;
@@ -14,7 +13,7 @@ namespace AppTest
     {
         static void Main(string[] args)
         {
-#if Calc
+
             float CacheResult;
             int CountMathIterations = 0, i, DoPlusMinus=0;
 
@@ -28,14 +27,6 @@ namespace AppTest
             while (CountMathIterations > 0)
             {
                 string[] Cache = Example.Split(' ');
-
-                //i = 0;
-                //foreach (var sub in Cache)
-                //{
-                //    i++;
-                //    Console.WriteLine($"Элемент {i}: {sub}");
-                //}
-
                 for (i = -1; i <= Cache.Length - 1;  i = i + 2)
                 {                                      
                     if (i >= Cache.Length)
@@ -80,28 +71,10 @@ namespace AppTest
                 for (i = 0; i < Cache.Length; i++)                
                     if (Cache[i] != null)
                         Example = Example + Cache[i] + " ";               
-
-                //Console.WriteLine($"Новый пример: {Example}");
-                //Console.WriteLine();
             }
             Console.WriteLine($"Ответ: {Example}");
-            Console.ReadKey();
-#endif
-
-
-
-#if Test
-            
-
-
-
-
-#endif 
+            Console.ReadKey();          
         }
-
-
-
-
     }
 }
 
