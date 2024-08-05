@@ -16,7 +16,6 @@ namespace AppTest
 #if Calculator
         static void Main(string[] args)
         {
-
             float CacheResult;
             int CountMathIterations = 0, i, DoPlusMinus=0;
 
