@@ -1,30 +1,34 @@
-﻿#define Calculator
-#define ArrayChecker
+﻿//#define Calculator
+//#define ArrayChecker
+//#define FacebookLiker
 
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.Serialization.Formatters;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace AppTest
 {
-    internal class Program
-    {
-#if Calculator
+
+internal class Program
+{
         static void Main(string[] args)
         {
+#if Calculator
             float CacheResult;
-            int CountMathIterations = 0, i, DoPlusMinus=0;
+            int CountMathIterations = 0, i, DoPlusMinus = 0;
 
             Console.WriteLine("Введите пример для решения.");
             string Example = Console.ReadLine();
 
-            for (i = 0; i < Example.Length; i++)           
+            for (i = 0; i < Example.Length; i++)
                 if (Example[i] == '/' || Example[i] == '*' || Example[i] == '+' || Example[i] == '-')
-                    CountMathIterations++;            
+                    CountMathIterations++;
 
             while (CountMathIterations > 0)
             {
@@ -38,7 +42,7 @@ namespace AppTest
                         DoPlusMinus = 1;
                         i = 1;
                     }
-                    if ((Cache[i] != "+" && Cache[i] != "-") || (DoPlusMinus != 1))                    
+                    if ((Cache[i] != "+" && Cache[i] != "-") || (DoPlusMinus != 1))
                         switch (Cache[i])
                         {
                             case "/":
@@ -52,7 +56,7 @@ namespace AppTest
                                 Cache[i + 1] = null;
                                 i = Cache.Length;
                                 break;
-                        }                                      
+                        }
                     else
                         switch (Cache[i])
                         {
@@ -72,13 +76,13 @@ namespace AppTest
                 CountMathIterations--;
                 Example = string.Empty;
 
-                for (i = 0; i < Cache.Length; i++)                
+                for (i = 0; i < Cache.Length; i++)
                     if (Cache[i] != null)
-                        Example = Example + Cache[i] + " ";               
+                        Example = Example + Cache[i] + " ";
             }
             Console.WriteLine($"Ответ: {Example}");
-            Console.ReadKey();          
-        }
+            Console.ReadKey();
+        
 #endif
 
 #if ArrayChecker
@@ -116,5 +120,36 @@ namespace AppTest
             return Missnumber;
         }
 #endif
-    }
+
+#if FacebookLiker
+            try
+            {
+                int i = name.Length;
+                switch (Convert.ToString(i))
+                {
+                    case "1":
+                        return $"{name[0]} likes this";
+                    case "2":
+                        return $"{name[0]} and {name[1]} like this";
+                    case "3":
+                        return $"{name[0]}, {name[1]} and {name[2]} like this";
+                    default:
+                        return $"{name[0]}, {name[1]} and {name.Length - 2} others like this";
+                }
+                throw new Exception("error");
+            }
+            catch (Exception)
+            {
+                return "no one likes this";
+            }
+#endif
+
+
+
+
+
+
+
+        }
+}
 }
