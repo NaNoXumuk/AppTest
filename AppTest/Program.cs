@@ -1,7 +1,7 @@
 ﻿//#define Calculator
 //#define ArrayChecker
 //#define FacebookLiker
-
+#define ReplaceLetters
 
 using System;
 using System.Collections.Generic;
@@ -144,6 +144,21 @@ internal class Program
             }
 #endif
 
+#if ReplaceLetters           
+            string str = "qwertyu";
+            if (str.Length % 2 != 0)
+                str += '_';
+            for (int i = 0; i < str.Length - 2;)
+            {
+                i += 2;
+                str = str.Insert(i, " ");
+                i++;
+            }
+            string[] Splited = str.Split(' ');
+            for (int i = 0;i < Splited.Length;i++)
+                Console.WriteLine(Splited[i]);        
+            Console.ReadKey();
+#endif
 
 
 
