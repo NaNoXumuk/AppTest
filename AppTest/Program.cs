@@ -152,10 +152,31 @@ internal class Program
 #endif
 
 #if Test
-            int [] Numbers = {  1, 2, 3, 4,5, 6, 7, 8 };
-            for (int i = 0; i <= Numbers.Length; i++)
-                if (!Numbers.Contains(i))
-                    Console.WriteLine(i);
+            int count = 0;
+            int rule=0;
+            List<int> list = new List<int>();
+            list.AddRange(new[] { 270, 810,1080, 1350, 1620 });
+            //list.AddRange(new[] { 1620,1080, 810, 540, 270 });
+            Console.WriteLine(list.Last());
+            for (int i = 0; i < list.Count; i++)
+                if (list[i] - list[i + 1] == list[i + 1] - list[i + 2])
+                {
+                    rule = list[i+1] - list[i];
+                    break;
+                }
+            
+            Console.WriteLine($"{list[0]}  {list[1]}");
+            for (int i = 0; i < list.Count;)
+            {
+                if (list[i] + rule != list[i + 1])
+                {
+                    count = i;
+                    break;
+                }
+                i++;
+            }
+            Console.WriteLine( list[count] + rule);
+
             Console.ReadKey();
 #endif
 
