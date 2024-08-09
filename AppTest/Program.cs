@@ -3,7 +3,9 @@
 //#define FacebookLiker
 //#define Origami
 //#define HighandLow
-#define Test
+//#define Test
+//#define CheckNumber
+#define CheckPassword
 
 using System;
 using System.Collections.Generic;
@@ -164,7 +166,7 @@ internal class Program
                     rule = list[i+1] - list[i];
                     break;
                 }
-            
+            Console.WriteLine(rule);
             Console.WriteLine($"{list[0]}  {list[1]}");
             for (int i = 0; i < list.Count;)
             {
@@ -179,6 +181,46 @@ internal class Program
 
             Console.ReadKey();
 #endif
+
+#if CheckNumber
+            string s = "streSS";
+            s=s.ToUpper();
+            int count = 0;
+            for (int i = 0; i < s.Length; i++)
+            {
+                for (int j = 0; j < s.Length; j++)
+                {
+                    if (s[i] == s[j])
+                        count++;
+                }
+                if (count == 1)
+                {
+                    Console.WriteLine(s[i]);
+                    Console.ReadKey();
+                    break;
+                }
+                count = 0;
+            }
+#endif
+
+#if CheckPassword
+            string str = "he_llo";
+            string Check = "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+            for (int i = 0; i < str.Length; i++)
+                if (!Check.Contains(str[i]))
+                    Console.WriteLine("true");
+            else
+                    Console.WriteLine(str[i]);
+            Console.ReadKey();
+#endif
+
+
+
+
+
+
+
+
 
 
 
