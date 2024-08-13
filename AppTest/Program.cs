@@ -13,7 +13,9 @@ using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Runtime.Serialization.Formatters;
+using System.Security.Permissions;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
@@ -204,14 +206,34 @@ internal class Program
 #endif
 
 #if CheckPassword
-            string str = "he_llo";
-            string Check = "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
-            for (int i = 0; i < str.Length; i++)
-                if (!Check.Contains(str[i]))
-                    Console.WriteLine("true");
-            else
-                    Console.WriteLine(str[i]);
-            Console.ReadKey();
+
+
+            //string str = "AB-C";
+            //string Done = null;
+            //for (int i  = 0; i < str.Length;i++)
+            //{
+            //    if (char.IsLetter(str[i]) == false)
+            //    {
+            //        Done +=char.ToUpper(str[i + 1]);
+            //        i+=2;
+            //    }
+            //    else
+            //    Done += str[i];
+            //}
+            //Console.WriteLine(Done);
+            string distance = "100m";
+            string time = "10s";
+         
+
+
+                            
+            Console.WriteLine("mph");
+
+            Console.ReadLine();
+
+
+
+
 #endif
 
 
