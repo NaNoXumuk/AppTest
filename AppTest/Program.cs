@@ -207,27 +207,8 @@ internal class Program
 
 #if CheckPassword
 
-
-            //string str = "AB-C";
-            //string Done = null;
-            //for (int i  = 0; i < str.Length;i++)
-            //{
-            //    if (char.IsLetter(str[i]) == false)
-            //    {
-            //        Done +=char.ToUpper(str[i + 1]);
-            //        i+=2;
-            //    }
-            //    else
-            //    Done += str[i];
-            //}
-            //Console.WriteLine(Done);
-            string distance = "100m";
-            string time = "10s";
-         
-
-
-                            
-            Console.WriteLine("mph");
+            int x = 0;
+            Console.WriteLine(x % 2);
 
             Console.ReadLine();
 
