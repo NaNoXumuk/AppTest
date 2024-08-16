@@ -207,8 +207,125 @@ internal class Program
 
 #if CheckPassword
 
-            int x = 0;
-            Console.WriteLine(x % 2);
+
+            //string n = Convert.ToString(ne);
+            //int startIndex = 0;
+            //int endIndex = 0;
+            //int maxNumber = 0;
+            //string cacheTail = "";
+            //string orderedTail = "";
+            //long[] word = new long[n.Length];
+            //bool stopCheck = false;
+            //for (int i = n.Length - 1; i > 0; i--)
+            //{
+            //    for (int j = n.Length - 1; j > 0; j--)
+            //        if (n[i] < n[j])
+            //        {
+            //            startIndex = i;
+            //            endIndex = j;
+            //            stopCheck = true;
+            //            break;
+            //        }
+            //    if (stopCheck == true)
+            //        break;
+            //}
+            //if (stopCheck == false)
+            //    return (-1);
+            //for (int i = n.Length - endIndex + 1; i < n.Length - 1; i++)
+            //{
+            //    cacheTail += Convert.ToString(n[endIndex]);
+            //    cacheTail += Convert.ToString(n[i]);
+            //}
+            //cacheTail += Convert.ToChar(n[startIndex]);
+            //orderedTail += cacheTail[0];
+            //for (int i = 1; i < cacheTail.Length; i++)
+            //{
+            //    for (int j = 2; j < cacheTail.Length; j++)
+            //    {
+            //        if (Convert.ToInt64(cacheTail[i]) >= Convert.ToInt64(cacheTail[j]))
+            //            maxNumber = Convert.ToInt32(cacheTail[i]);
+            //    }
+            //    orderedTail += maxNumber;
+            //}
+            //maxNumber = 0;
+            //for (int i = 0; i < orderedTail.Length; i++)
+            //    word[i] = Convert.ToInt64(orderedTail[i]);
+
+            //for (int i = 0; i < word.Length; i++)
+            //    for (int j = 0; j < word.Length - 1; j++)
+            //        if (Convert.ToInt64(word[j]) < Convert.ToInt64(word[j + 1]))
+            //        {
+            //            maxNumber = Convert.ToInt32(word[j + 1]);
+            //            word[j + 1] = word[j];
+            //            word[j] = maxNumber;
+            //        }
+            //cacheTail = string.Empty;
+
+            //for (int i = 0; i > n[endIndex - 1]; i++)
+            //    cacheTail += Convert.ToString(n[i]);
+
+            //for (int i = 0; i < word.Length; i++)
+            //    cacheTail += word[i];
+
+            //return Convert.ToInt64(cacheTail);
+
+
+            int[] arr = { 20, 19, 25, 16, 19, 30, 18, 24 };
+            int temp = 0;
+            int centre = 0;
+            int countr = 1;
+            int countl = 1;
+            int[] answer = new int[arr.Length];
+            for (int write = 0; write < arr.Length; write++)            
+                for (int sort = 0; sort < arr.Length - 1; sort++)                
+                    if (arr[sort] > arr[sort + 1])
+                    {
+                        temp = arr[sort + 1];
+                        arr[sort + 1] = arr[sort];
+                        arr[sort] = temp;
+                    }
+
+            for (int i = 0; i < arr.Length; i++)
+                Console.Write(arr[i] + " ");
+            Console.WriteLine();
+
+
+            centre = (arr.Length - 1) / 2;
+            answer[centre] = arr[0];
+
+            for (int i = 1 ; i < arr.Length;i++)
+                if (i % 2 == 0)
+                {
+                    answer[centre - countr] = arr[i];
+                    countr++;
+                }
+                else
+                {
+                    answer[centre + countl] = arr[i];
+                    countl++;
+                }
+            
+
+            
+
+
+            for (int i = 0; i < answer.Length; i++)
+                Console.Write(answer[i] + " ");
+            Console.ReadKey();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             Console.ReadLine();
 
